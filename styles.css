@@ -1,0 +1,131 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    color: #062a3e;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    margin: 2em auto;
+    text-align: center;
+    display: flex;
+}
+
+header #add-book {
+    margin-left: auto;
+    padding: 10px 20px;
+    background: #417495;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1.1rem;
+}
+
+.books {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: #417495;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.books .book {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.book * {
+    margin: 5px 0;
+}
+
+
+.blur {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+
+dialog {
+    position: absolute;
+    top: 25%;
+    margin:  auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(28, 74, 97);
+    width: 50%;
+    max-width: 500px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem
+}
+
+form div,
+form button,
+form input,
+form label
+{
+    margin: 0;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+form div input {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: 1px solid #417495;
+    border-radius: 5px;
+}
+form div label {
+    margin: 0.8rem 0 0.2rem 0;
+}
+
+form .read-container {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.read-container input {
+    width: 20px;
+    height: 20px;
+}
+
+form .btn {
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+form .btn button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    background: #417495;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
