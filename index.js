@@ -16,7 +16,13 @@ function openForm() {
     form.appendChild(formTitle);
 
     const formElements = createFormInput(inputData);
-    formElements.forEach(container => { form.appendChild(container) });
+    formElements.forEach(container => {
+        if (container instanceof Node) {
+            form.appendChild(container);
+        } else {
+            console.error('Invalid container:', container);
+        }
+    });
 
     const buttonsContainer = document.createElement('div');
     buttonsContainer.className = "btn";
