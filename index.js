@@ -16,7 +16,7 @@ function openForm() {
     form.appendChild(formTitle);
 
     const formElements = createFormInput(inputData);
-    formElements.forEach(container => form.appendChild(container));
+    formElements.forEach(container => { form.appendChild(container) });
 
     const buttonsContainer = document.createElement('div');
     buttonsContainer.className = "btn";
@@ -75,8 +75,7 @@ function openForm() {
 }
 
 function createFormInput(inputData) {
-    return inputData.map(data =>{
-
+    return inputData.map(data => {
         const container = document.createElement("div")
         container.className = data.containerClass;
 
@@ -116,17 +115,19 @@ const inputData = [
 ]
 
 const myLibrary = [
-    { title: 'The Hobbit', author: 'J.R.R. Tolkien', pages: 295, read: true },
-    { title: 'The Catcher in the Rye', author: 'J.D. Salinger', pages: 214, read: false },
-    { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', pages: 180, read: true },
-    { title: 'The Hobbit', author: 'J.R.R. Tolkien', pages: 295, read: true },
+    { title: 'The Hobbit', author: 'J.R.R. Tolkien', pages: 295, readStatus: true },
+    { title: 'The Catcher in the Rye', author: 'J.D. Salinger', pages: 214, readStatus: false },
+    { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', pages: 180, readStatus: true },
+    { title: 'The Hobbit', author: 'J.R.R. Tolkien', pages: 295, readStatus: true },
 ];
 
-function Book (title, author, pages, status) {
-    this.title = title;
-    this.author = author;
-    this.pages = Number(pages) || 0;
-    this.status = Boolean(status);
+class Book {
+    constructor (title, author, pages, readStatus) {
+        this.title = title;
+        this.author = author;
+        this.pages = Number(pages) || 0;
+        this.readStatus = Boolean(readStatus);
+    }
 }
 
 function addBookToLibrary(book) {
@@ -150,7 +151,7 @@ function addBookToLibrary(book) {
         status.textContent = "Status: ";
 
         const readStatus = document.createElement('button');
-        readStatus.textContent = book.status ? "Read" : "Not Read";
+        readStatus.textContent = book.readStatus ? "Read" : "Not Read";
 
 
         readStatus.addEventListener('click', () => {
